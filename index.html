@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>गोरनी - पत्रिका</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            background: #000
+        }
+        #imgHolder {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 150px;
+            margin-bottom: 150px;
+            display: block;
+            position: relative;
+        }
+        #imgHolder img {
+            width: 100%;
+        }
+        *:focus {
+            outline: none
+        }
+        #panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color:#000;
+            z-index: 88;
+            color: #fff;
+            padding: 35px;
+        }
+        .form-group {
+            display: block;
+            margin-bottom: 20px;
+        }
+        .form-group .label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .form-group .input {
+            display: block;
+            width: calc(100% - 16px);
+            height: 35px;
+            padding: 4px 8px;
+        }
+        .tt-sg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tt-sg.t2  .tt-select {
+            flex: 0 0 calc(100% / 2);
+        }
+        .tt-sg.t4  .tt-select {
+            flex: 0 0 calc(100% / 4);
+        }
+        .tt-sg.t3  .tt-select {
+            flex: 0 0 calc(100% / 3);
+        }
+        .tt-select input {
+            opacity: 0;
+        }
+        .tt-select span{
+            flex: 0 0 calc(33% - 16px);
+            background-color: #fff;
+            color: #000;
+            display: block;
+            padding: 8px;      
+            text-align: center;      
+        } 
+        
+        .tt-select input:checked + span{ 
+            background-color: #b00;
+            color: #fff
+        }      
+        .tt-select:first-child span {
+            border-radius: 5px 0 0 5px;
+        }        
+        .tt-select:last-child span {
+            border-radius: 0 5px 5px 0;
+        }
+        #btn {
+            display: block;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 0;
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            background-color: #fff;
+            color: #000
+        }
+        
+        #name, #add, #tt1, #tt2, #tt3 {
+            position: absolute;
+            top: 8.8%;
+            font-size: 2.6vw;
+            font-weight: 700;
+            color: #033f99;
+        }
+        @media (min-width: 1200px) {
+            #name, #add {
+                top: 8.9%
+            }
+        }
+        #name {
+            left: 21%;
+            min-width: 52%;
+        }
+        #name.no-tt1-tt2 {
+            left: 7%;
+        }
+        #name.no-tt1 {
+            left: 10.5%;
+        }
+        #name.no-tt2 {
+            left: 16%;
+        }
+        #name.shree-only {
+            left: 10.9%;
+        }
+        #name.shree-has {
+            left: 15%;
+        }
+        #tt1 {
+            left: 6.7%;
+        }
+        #tt2 {
+            left: 16.8%;
+        }
+        #tt2.no-tt1 {
+            left: 6.7%;
+        }
+        #tt2.shree-has {
+            left: 11%;
+        }
+        #tt3 {
+            left: 74%
+        }
+        #add {            
+            left: 77.9%;
+            min-width: 14%;
+        }
+        #add.gaw-has {
+            left: 79.3%;
+        }
+        #tt1, #tt3 {
+            color: #000
+        }
+    </style>
+</head>
+<body>
+    <div id="panel">
+        <div class="form-group">
+            <div class="tt-sg t4">
+                <label class="tt-select"><input type="radio" name="tt1" value="श्री मान" checked="checked"><span>श्री मान</span></label>
+                <label class="tt-select"><input type="radio" name="tt1" value="श्री मति"><span>श्री मति</span></label>
+                <label class="tt-select"><input type="radio" name="tt1" value="श्री"><span>श्री</span></label>
+                <label class="tt-select"><input type="radio" name="tt1" value=""><span>-</span></label>
+            </div>
+            <div class="tt-sg t4">
+                <label class="tt-select"><input type="radio" name="tt2" value="ठा." checked><span>ठा.</span></label>
+                <label class="tt-select"><input type="radio" name="tt2" value="कुँ."><span>कुँ.</span></label>
+                <label class="tt-select"><input type="radio" name="tt2" value="भं."><span>भं.</span></label>
+                <label class="tt-select"><input type="radio" name="tt2" value=""><span>-</span></label>
+            </div>
+            <div class="tt-sg t2">
+                <label class="tt-select"><input type="radio" name="tt3" value="ठि." checked><span>ठि.</span></label>
+                <label class="tt-select"><input type="radio" name="tt3" value="गाँव"><span>गाँव</span></label>                
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label class="label" for="">नाम</label>
+            <input class="input" type="text" name="nameX" autofocus value="">
+        </div>
+        <div class="form-group">
+            <label class="label" for="">ठिकाना</label>
+            <input class="input" type="text" name="addX" value="">
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <button id="btn">सबमिट करे</button>
+        </div>
+    </div>
+    <div id="imgHolder">
+        <img src="101.png" alt="">
+        <p id="tt1"></p>
+        <p id="tt2"></p>
+        <p id="name"></p>
+        <p id="tt3"></p>
+        <p id="add"></p>
+    </div>
+    <script src="jquery-3.6.1.min.js"></script>
+   <script>
+    $(document).ready(function(){
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+
+            let name = params.n
+            if (name) {
+                name = name.replaceAll('_',' ')
+                $('[name="nameX"]').val(name);
+            }
+            let add = params.t;
+            if (add) {
+                add = add.replaceAll('_',' ')
+                $('[name="addX"]').val(add)
+            }
+        $('#btn').click(function(){
+            var tt1 = $('[name="tt1"]:checked').val();
+            var tt2 = $('[name="tt2"]:checked').val();
+            var nameX = $('[name="nameX"]').val();
+            var addX = $('[name="addX"]').val();
+            var tt3 = $('[name="tt3"]:checked').val();
+            console.log(tt1, tt2, nameX, addX)
+            if (tt1 == '' && tt2 == '') {
+                $('#name').addClass('no-tt1-tt2')
+            } else if (tt1 == '' && tt2 != '') {
+                $('#tt2').addClass('no-tt1')
+                $('#name').addClass('no-tt1')
+            } else if (tt1 != '' && tt2 == '') {
+                $('#tt1').addClass('no-tt2')
+                $('#name').addClass('no-tt2')
+            }
+            if (tt1 == 'श्री' && tt2 == '') {
+                $('#name').addClass('shree-only')
+            }
+            if (tt1 == 'श्री' && tt2 != '') {
+                $('#tt2').addClass('shree-has')
+                $('#name').addClass('shree-has')
+            }
+            if (tt3 == 'गाँव') {
+                $('#add').addClass('gaw-has')
+            }
+            $('#tt1').html(tt1)
+            $('#tt2').html(tt2)
+            $('#tt3').html(tt3)
+            $('#name').html(nameX)
+            $('#add').html(addX)
+            $('#panel').hide()
+        })
+    })
+    
+   </script>
+</body>
+</html>
